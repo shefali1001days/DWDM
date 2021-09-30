@@ -26,3 +26,17 @@ else:
     get_mode = "Mode is / are: " + ', '.join(map(str, mode))
       
 print(get_mode)
+
+import math
+
+>>> # We relay on our previous implementation for the variance
+>>> def variance(data, ddof=0):
+...     n = len(data)
+...     mean = sum(data) / n
+...     return sum((x - mean) ** 2 for x in data) / (n - ddof)
+...
+
+>>> def stdev(data):
+...     var = variance(data)
+...     std_dev = math.sqrt(var)
+...     return std_dev
